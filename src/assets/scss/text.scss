@@ -1,0 +1,68 @@
+@import '_vars';
+
+.text {
+    &_align {
+        &_center {
+            text-align: center;
+        }
+
+        &_left {
+            text-align: left;
+        }
+
+        &_right {
+            text-align: right;
+        }
+    }
+
+    &_cursor {
+        &_pointer {
+            cursor: pointer;
+        }
+    }
+
+    &_decoration {
+        &_underline {
+            text-decoration: underline;
+        }
+    }
+
+    &_display {
+        &_block {
+            display: block;
+        }
+
+        &_inlineBlock {
+            display: inline-block;
+        }
+
+        &_inline {
+            display: inline;
+        }
+    }
+
+    &_spacing {
+        &_xs {
+            letter-spacing: 0.06em;
+        }
+
+        &_s {
+            letter-spacing: 0.1em;
+        }
+
+        &_m {
+            letter-spacing: 0.14em;
+        }
+
+        &_l {
+            letter-spacing: 0.2em;
+        }
+    }
+
+    &_transform {
+        &_uppercase {
+            text-transform: uppercase;
+        }
+    }
+}
+

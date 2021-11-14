@@ -1,0 +1,66 @@
+@import "_vars";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: $Roboto-Bold;
+    font-weight: bold;
+    margin: 0;
+}
+
+h1,
+.h1 {
+    font-size: $fs38;
+    line-height: $lh54;
+
+    @media (max-width: 719px) {}
+}
+
+h2,
+.h2 {
+    font-size: $fs36;
+    line-height: $lh54;
+
+    @media (max-width: 719px) {}
+
+    h3,
+    .h3 {
+        font-size: $fs30;
+        line-height: $lh30;
+
+        @media (max-width: 719px) {}
+    }
+
+    h4,
+    .h4 {
+        font-size: $fs20;
+        line-height: $lh26;
+
+        @media (max-width: 719px) {}
+    }
+
+    h5,
+    .h5 {
+        font-size: $fs16;
+        line-height: $lh24;
+
+        @media (max-width: 719px) {}
+    }
+
+    h6,
+    .h6 {
+        font-size: $fs14;
+        line-height: $lh20;
+
+        @media (max-width: 719px) {}
+    }
+}
