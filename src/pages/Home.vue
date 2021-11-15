@@ -1,33 +1,49 @@
 <template>
     <div>
         <div class="container">
-            <div class="row">
+            <div class="row mt-60">
+                <div class="col-lg-24 col-xs-12">
+                    <VueSlickCarousel />
+                </div>
+            </div>
+            <div class="row mt-60">
                 <div class="col-lg-24 col-xs-12">
                     <h1 class="h1 text_align_center">Специальные предложения</h1>
                 </div>
             </div>
+            <div class="row mt-60">
+                <div class="col-lg-24 col-xs-12">
+                    <Card :products="productItem" />
+                    <Button size="medium" type="primary" class="mt-30 text_align_center">Смотреть все</Button>
+                </div>
+            </div>
             <div class="row">
-                <Card 
-                    :products="productItem" 
-                />
+                <div class="col-lg-24 col-xs-12">
+
+                </div>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-    import Card from "@/components/Card/Card"
+
+    import Card from "@/components/Card/Card";
+    import VueSlickCarousel from "@/components/vueSlickCarousel/vueSlickCarousel";
+    import Button from "@/components/Button/Button";
 
     export default {
         name: 'Home',
         components: {
             Card,
+            VueSlickCarousel,
+            Button
         },
         props: {
             product: {
                 type: Array,
                 default: () => []
-            }
+            },
         },
         data: () => ({
             productItem: [{
@@ -76,8 +92,21 @@
 
         },
         methods: {
+            next() {
+                this.$refs.slick.next();
+            },
 
-        }
+            prev() {
+                this.$refs.slick.prev();
+            },
+
+            reInit() {
+                // Helpful if you have to deal with v-for to update dynamic lists
+                this.$nextTick(() => {
+                    this.$refs.slick.reSlick();
+                });
+            },
+        },
     }
 </script>
 

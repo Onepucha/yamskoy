@@ -194,6 +194,7 @@
 
                     li {
                         a {
+                            font-family: $Bold;
                             font-size: $fs16;
                             line-height: $lh24;
                             padding: 17px 20px;
@@ -201,7 +202,6 @@
                             color: $body-color;
                             position: relative;
                             background: transparent;
-                            font-family: $Bold;
 
                             &::before {
                                 content: '';

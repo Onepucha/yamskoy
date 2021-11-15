@@ -1,26 +1,24 @@
 <template>
-    <div>
-        <div class="catalog-slider__item">
-            <div class="catalog-item">
-                <div class="catalog-item__in">
-                    <span class="catalog-item__image">
-                        <span class="catalog-item__image-inside">
-                            <img :src="require('@/assets/images/catalog-item-' + product.img)" alt=""/>
-                        </span>
+    <div class="catalog-slider__item">
+        <div class="catalog-item">
+            <div class="catalog-item__in">
+                <span class="catalog-item__image">
+                    <span class="catalog-item__image-inside">
+                        <img :src="require('@/assets/images/catalog-item-' + product.img)" alt=""/>
                     </span>
-                    <div class="catalog-item__title">{{ product.title }}</div>
-                    <div class="catalog-item__description">
-                        <div class="catalog-item__prices">
-                            <span class="catalog-item__price js-catalog-item-price">{{ product.price }} ₽ / {{ product.order }}</span>
-                        </div>
+                </span>
+                <div class="catalog-item__title">{{ product.title }}</div>
+                <div class="catalog-item__description">
+                    <div class="catalog-item__prices">
+                        <span class="catalog-item__price js-catalog-item-price">{{ product.price }} ₽ / {{ product.order }}</span>
                     </div>
-                    <ul class="badges">
-                        <li class="badges__item">
-                            <span class="badge" :class="classBadge">{{ }}</span>
-                        </li>
-                    </ul>
-                    <a href="/catalog/kamelija-kaskad-enni.htm" class="catalog-item__link"></a>
                 </div>
+                <ul class="badges">
+                    <li class="badges__item">
+                        <span class="badge" :class="classBadge">{{ }}</span>
+                    </li>
+                </ul>
+                <a href="/catalog/kamelija-kaskad-enni.htm" class="catalog-item__link"></a>
             </div>
         </div>
     </div>
@@ -65,11 +63,6 @@
         padding: 46px 0 40px;
     }
 
-    .catalog-slider .catalog-item,
-    .catalog-slider__item {
-        height: 100%;
-    }
-
     .catalog-slider .catalog-item-overlay {
         display: none;
     }
@@ -108,6 +101,7 @@
     .catalog-slider__item {
         width: 100%;
         padding: 10px;
+        flex: 1;
     }
 
     .catalog-slider+.catalog-slider {
@@ -311,10 +305,10 @@
         display: flex;
         position: relative;
         align-items: flex-end;
-        -webkit-box-flex: 1;
-        -ms-flex: 1 0 auto;
         flex: 1 0 auto;
         padding: 0 20px 20px;
+        font-family: $Bold;
+        font-weight: bold;
     }
 
     .catalog-item__prices {
@@ -484,10 +478,10 @@
             content: 'Лучший выбор';
         }
     }
-    
+
     .badge--new {
         background-color: $green;
-        
+
         &::before {
             content: 'Новинка!';
         }
@@ -495,7 +489,7 @@
 
     .badge--best-choice {
         background-color: $orange;
-        
+
         &::before {
             content: 'Хит сезона!';
         }
