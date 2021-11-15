@@ -1,24 +1,26 @@
 <template>
-    <div class="catalog-slider__item">
-        <div class="catalog-item">
-            <div class="catalog-item__in">
-                <span class="catalog-item__image">
-                    <span class="catalog-item__image-inside">
-                        <img :src="require('@/assets/images/catalog-item-' + product.img)" alt=""/>
+    <div class="col-lg-6 col-xs-12">
+        <div class="catalog-slider__item">
+            <div class="catalog-item">
+                <div class="catalog-item__in">
+                    <span class="catalog-item__image">
+                        <span class="catalog-item__image-inside">
+                            <img :src="require('@/assets/images/catalog-item-' + product.img)" :alt="require('@/assets/images/catalog-item-' + product.img)"/>
+                        </span>
                     </span>
-                </span>
-                <div class="catalog-item__title">{{ product.title }}</div>
-                <div class="catalog-item__description">
-                    <div class="catalog-item__prices">
-                        <span class="catalog-item__price js-catalog-item-price">{{ product.price }} ₽ / {{ product.order }}</span>
+                    <div class="catalog-item__title">{{ product.title }}</div>
+                    <div class="catalog-item__description">
+                        <div class="catalog-item__prices">
+                            <span class="catalog-item__price js-catalog-item-price">{{ product.price }} ₽ / {{ product.order }}</span>
+                        </div>
                     </div>
+                    <ul class="badges">
+                        <li class="badges__item">
+                            <span class="badge" :class="classBadge">{{ }}</span>
+                        </li>
+                    </ul>
+                    <a href="/catalog/kamelija-kaskad-enni.htm" class="catalog-item__link"></a>
                 </div>
-                <ul class="badges">
-                    <li class="badges__item">
-                        <span class="badge" :class="classBadge">{{ }}</span>
-                    </li>
-                </ul>
-                <a href="/catalog/kamelija-kaskad-enni.htm" class="catalog-item__link"></a>
             </div>
         </div>
     </div>
@@ -100,7 +102,8 @@
 
     .catalog-slider__item {
         width: 100%;
-        padding: 10px;
+        height: 100%;
+        padding: 20px 10px;
         flex: 1;
     }
 

@@ -1,5 +1,14 @@
 @import '_vars';
 
+p {
+    margin: 0;
+    padding: 0;
+}
+
+p + p {
+    margin-top: 20px;
+}
+
 .text {
     &_align {
         &_center {

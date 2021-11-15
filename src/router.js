@@ -1,18 +1,24 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "@/pages/Home";
+// import Home from "@/pages/Home";
 
 Vue.use(VueRouter);
+function lazyLoad(view){
+    return() => import(`@/pages/${view}.vue`)
+}
 
 const routes = [
     {
         path: '/',
-        component: Home,
+        name: 'Home',
+        component: lazyLoad('Home')
     }
 ]
 
 
 export default new VueRouter({
     mode: 'history',
+    base: process.env.BASE_URL,
     routes,
+
 })

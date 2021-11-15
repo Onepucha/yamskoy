@@ -17,11 +17,7 @@
                 type: Array,
                 default: () => [],
             },
-            methods: {
-
-            },
         },
-        mounted() {}
     }
 </script>
 
@@ -29,5 +25,6 @@
     .catalog-wrapper {
         display: flex;
         flex-wrap: wrap;
+        margin: -10px -10px;
     }
 </style>

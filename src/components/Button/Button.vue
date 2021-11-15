@@ -42,7 +42,6 @@
         mounted() {},
         methods: {
             onClick() {
-                console.log(this.$emit("onClick"));
                 this.$emit("onClick");
             }
         },
