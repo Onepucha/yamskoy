@@ -191,13 +191,15 @@
 
                 ul {
                     display: flex;
+                    margin: 0;
 
                     li {
                         a {
+                            display: inline-block;
                             font-family: $Bold;
                             font-size: $fs16;
                             line-height: $lh24;
-                            padding: 17px 20px;
+                            padding: 20px;
                             text-decoration: none;
                             color: $body-color;
                             position: relative;
