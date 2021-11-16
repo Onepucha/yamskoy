@@ -4,6 +4,7 @@ import router from "@/router";
 // import axios from 'axios';
 import store from './store';
 import "./main.scss"
+import 'animate.css';
 
 // import global components
 import Button from '@/components/Button/Button';

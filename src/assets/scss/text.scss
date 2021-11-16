@@ -10,6 +10,21 @@ p + p {
 }
 
 .text {
+    &_52_54 {
+        font-size: $fs52;
+        line-height: $lh54;
+        font-family: $Roboto-Bold;
+    }
+
+    &_bold {
+        font-family: $Bold;
+    }
+
+    &_green {
+        color: $green;
+    }
+
+
     &_align {
         &_center {
             text-align: center;
@@ -74,4 +89,3 @@ p + p {
         }
     }
 }
-

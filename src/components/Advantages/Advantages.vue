@@ -2,29 +2,13 @@
     <div class="advantages">
         <div class="col-lg-12 col-xs-12">
             <img :src="require('@/assets/images/bg-image-left.jpg')" alt="">
-            <h3 class="advantages-title-head text-white">Покупая продукты в «Ямском фермере», вы получаете:</h3>
+            <h3 class="advantages-title-head text-white">{{ title }}</h3>
         </div>
         <div class="col-lg-12 col-xs-12">
             <div class="advantages-main text-secondary">
-                <div class="advantages-content">
-                    <h3 class="advantages-title text-green text-bold">Экономию деньги на лекарствах</h3>
-                    <p>ВОЗ рекомендует выбирать экологичные продукты для охранения здоровья взрослых и детей.</p>
-                </div>
-                <div class="advantages-content">
-                    <h3 class="advantages-title text-green text-bold">Натуральность</h3>
-                    <p>Когда, где и кто произвел этот продукт — мы работаем с поставщиком напрямую и сами забираем
-                        продукты на фермах. Также мы проверяем продукты в независимой лаборатории на их натуральность.
-                    </p>
-                </div>
-                <div class="advantages-content">
-                    <h3 class="advantages-title text-green text-bold">Уверены в безопасности продуктов</h3>
-                    <p>Продукты имеют все необходимые свидетельства и сертификаты. Наши продукты по-настоящему
-                        натуральные и вкусные.</p>
-                </div>
-                <div class="advantages-content">
-                    <h3 class="advantages-title text-green text-bold">Удовольствие </h3>
-                    <p>Поддерживаете экологичные методы сельского хозяйства. Не тратите время на беготню по рынкам и
-                        супермаркертам.</p>
+                <div class="advantages-content" v-for="(advantage, index) in advantages" :key="index">
+                    <h3 class="advantages-title text-green text-bold">{{ advantage.advantagesTitle}}</h3>
+                    <p>{{ advantage.advantagesDescriptions}}</p>
                 </div>
             </div>
         </div>
@@ -35,7 +19,14 @@
     export default {
         name: 'Advantages',
         props: {
-
+            title: {
+                type: String,
+                default: '',
+            },
+            advantages: {
+                type: Array,
+                default: () => [],
+            },
         },
     }
 </script>
@@ -47,6 +38,7 @@
         position: relative;
         display: flex;
         flex-wrap: wrap;
+        width: 100%;
 
         & &-title {
             font-size: 20px;

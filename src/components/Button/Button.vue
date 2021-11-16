@@ -1,14 +1,15 @@
 <template>
     <div>
-        <button
-            class="button"
-            :class="classButton"
-            type="button"
-            name="button"
-            @click="onClick"
-        >
-            <slot></slot>
-        </button>
+        <component
+        :is="tag"
+        class="button"
+        :class="classButton"
+        type="button"
+        name="button"
+        @click="onClick"
+    >
+        <slot></slot>
+    </component>
     </div>
 </template>
 
@@ -16,6 +17,10 @@
     export default {
         name: 'Button',
         props: {
+            tag: {
+                type: String,
+                default: 'div'
+            },
             size: {
                 type: String,
                 default: "medium",
