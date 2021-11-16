@@ -51,6 +51,10 @@
             margin-top: 20px;
         }
 
+        img {
+            display: block;
+        }
+
         & .advantages-title-head {
             font-size: 36px;
             line-height: 54px;
