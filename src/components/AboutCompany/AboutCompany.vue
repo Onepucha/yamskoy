@@ -1,15 +1,15 @@
 <template>
     <div>
         <div class="col-lg-24 col-xs-12" v-for="(about, index) in abouts" :key="index">
-            <h3 class="h3">{{ about.title }}</h3>
-            <p>{{ about.description }}</p>
+            <h2 class="h2">{{ about.title }}</h2>
+            <p v-for="(descriptions, index) in about.descriptions" :key="index">{{ descriptions }}</p>
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: 'Advantages',
+        name: 'AboutCompany',
         props: {
             abouts: {
                 type: Array,

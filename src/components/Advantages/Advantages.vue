@@ -69,7 +69,7 @@
         & .advantages-main {
             background: $light-green;
             height: 100%;
-            width: calc(100% + 10px);
+            width: calc(100% + 20px);
             margin: 0 -10px;
             padding: 80px 65px 80px 65px;
             display: flex;
