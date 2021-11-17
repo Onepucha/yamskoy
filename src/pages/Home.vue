@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="wrapper mb-80">
         <div class="container">
             <div class="row">
                 <div class="col-lg-24 col-xs-12">
@@ -14,8 +14,10 @@
             <div class="row mt-60">
                 <div class="col-lg-24 col-xs-12">
                     <Card :products="productsItem" />
-                    <Button tag="button" size="large" type="primary" class="mt-40 text_align_center" v-if="showButton"
+                    <div class="mt-40 text_align_center">
+                        <Button tag="button" size="large" type="primary" v-if="showButton"
                         @onClick="loadMore">Смотреть все</Button>
+                    </div>
                 </div>
             </div>
             <div class="row mt-80">
@@ -24,7 +26,7 @@
             <div class="row">
                 <DefinitelyProduct />
             </div>
-            <div class="row mt-80 mb-80">
+            <div class="row mt-80">
                 <AboutCompany :abouts="aboutCompany" />
             </div>
         </div>
@@ -205,5 +207,8 @@
 </script>
 
 <style scoped>
-
+    .wrapper {
+        min-height: 100%;
+        margin-bottom: -84px;
+    }
 </style>

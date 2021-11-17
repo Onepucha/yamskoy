@@ -1,6 +1,5 @@
 <template>
-    <div>
-        <component
+    <component
         :is="tag"
         class="button"
         :class="classButton"
@@ -10,7 +9,6 @@
     >
         <slot></slot>
     </component>
-    </div>
 </template>
 
 <script>

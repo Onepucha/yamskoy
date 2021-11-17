@@ -1,33 +1,43 @@
 <template>
-    <slick ref="slick"
-        :options="slickOptions"
-    >
-        <div class="carousel-wrapper" v-for="(slide, index) in slides" :key="index">
-            <div class="carousel-item">
-                <figure>
-                    <img :src="require('@/assets/images/bg-slide-' + slide.img)"
-                        :alt="require('@/assets/images/bg-slide-' + slide.img)" />
-                </figure>
-                <div class="rect-content">
-                    <img src="@/assets/images/logo.png" alt="">
-                    <div class="text_52_54 mt-20"><span class="text_green">Только</span> натуральные продукты
+    <div>
+        <slick ref="slick" :options="slickOptions">
+
+            <div class="carousel-wrapper" v-for="(slide, index) in slides" :key="index">
+                <div class="carousel-item">
+                    <figure>
+                        <img :src="require('@/assets/images/bg-slide-' + slide.img)"
+                            :alt="require('@/assets/images/bg-slide-' + slide.img)" />
+                    </figure>
+                    <div class="rect-content">
+                        <img src="@/assets/images/logo.png" alt="">
+                        <div class="text_52_54 mt-20"><span class="text_green">Только</span> натуральные продукты
+                        </div>
+                        <Button tag="a" size="large" type="primary" class="mt-40" @onClick="showModal">Подробнее</Button>
                     </div>
-                    <Button tag="a" size="large" type="primary" class="mt-40">Подробнее</Button>
                 </div>
             </div>
-        </div>
-    </slick>
+        </slick>
+
+        <Modal
+            v-if="isModalVisible"
+            @closeModal="closeModalIn"
+        >
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur eum repudiandae, fugit consequuntur corrupti itaque reiciendis labore autem incidunt! Eveniet ullam necessitatibus itaque voluptates commodi eaque eum, molestias minus quas?</p>
+        </Modal>
+    </div>
 </template>
 
 <script>
     import Slick from 'vue-slick';
     import Button from "@/components/Button/Button";
+    import Modal from "@/components/Modal/Modal";
 
     export default {
         name: 'VueSlickCarousel',
         components: {
             Slick,
-            Button
+            Button,
+            Modal
         },
         props: {
             slides: {
@@ -43,9 +53,20 @@
                 lazyLoad: true,
                 autoplay: true,
                 speed: 1000,
-                draggable:true,
+                draggable: true,
             },
+            isModalVisible: false,
         }),
+        methods: {
+            showModal() {
+                this.isModalVisible = true;
+                document.body.classList.add('modal-open');
+            },
+            closeModalIn() {
+                this.isModalVisible = false;
+                document.body.classList.remove('modal-open');
+            }
+        }
     }
 </script>
 
