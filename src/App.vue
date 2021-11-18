@@ -16,8 +16,6 @@
             Header,
             Footer
         },
-        data: () => ({
-
-        })
+        data: () => ({})
     };
 </script>

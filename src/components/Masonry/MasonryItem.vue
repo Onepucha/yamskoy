@@ -71,7 +71,7 @@
                 justify-content: center;
                 align-items: center;
                 width: 100%;
-                height: 220px;
+                height: 100%;
                 font-size: 40px;
                 color: rgba($white, 1);
                 cursor: pointer;
@@ -99,17 +99,11 @@
                     }
                 }
 
-                &--small {
-                    height: 270px;
-                }
+                &--small {}
 
-                &--medium {
-                    height: 270px;
-                }
+                &--medium {}
 
-                &--large {
-                    height: 570px;
-                }
+                &--large {}
             }
         }
     }
