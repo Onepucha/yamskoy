@@ -1,14 +1,11 @@
 <template>
     <div class="modal-wrapper" ref="modalOverlay">
         <div class="modal">
-            <div class="modal__header">
-                <span>Name</span>
-                <button class="modal__header-close" @click="closeModal">&times;</button>
-            </div>
+            <button class="modal__header-close" @click="closeModal">&times;</button>
             <div class="modal__content">
                 <slot></slot>
             </div>
-            <div class="modal__footer">
+            <div class="modal__footer" v-if="isButtonFooter">
                 <Button tag="button" size="large" type="primary" @onClick="closeModal">Закрыть</Button>
             </div>
         </div>
@@ -24,7 +21,10 @@
             Button,
         },
         props: {
-
+            isButtonFooter: {
+                type: Boolean,
+                default: true
+            }
         },
         data: () => ({}),
         computed: {},
@@ -56,12 +56,12 @@
         right: 0;
         bottom: 0;
         left: 0;
-        background: rgba($black, .4);
+        background: rgba($black, .6);
         z-index: 1001;
 
         .modal {
             position: absolute;
-            padding: 20px;
+            padding: 40px;
             top: 50%;
             transform: translateY(-50%);
             left: 0;
@@ -76,9 +76,16 @@
                 justify-content: space-between;
                 align-items: center;
 
+                & + .modal__content {
+                    margin-top: 20px;
+                }
+
                 &-close {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
                     cursor: pointer;
-                    padding: 5px 10px;
+                    padding: 10px 15px;
                 }
             }
 
@@ -86,7 +93,6 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                margin-top: 20px;
             }
 
             &__footer {

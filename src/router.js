@@ -12,6 +12,10 @@ const routes = [
         path: '/',
         name: 'Home',
         component: lazyLoad('Home')
+    }, {
+        path: '/aboutus',
+        name: 'AboutUs',
+        component: lazyLoad('AboutUs')
     }
 ]
 
