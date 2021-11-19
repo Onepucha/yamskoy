@@ -12,7 +12,7 @@
                         <img src="@/assets/images/logo.png" alt="">
                         <div class="text_52_54 mt-20"><span class="text_green">Только</span> натуральные продукты
                         </div>
-                        <Button tag="a" size="large" type="primary" class="mt-40" @onClick="showModal">Подробнее</Button>
+                        <Button tag="button" size="large" type="primary" class="mt-40" @onClick="showModal">Подробнее</Button>
                     </div>
                 </div>
             </div>
